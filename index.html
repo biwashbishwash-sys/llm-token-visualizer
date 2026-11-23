@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Token & Cost Visualizer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h2>Token & Cost Visualizer</h2>
+    <textarea id="userInput" placeholder="Type or paste text here..."></textarea>
+    
+    <div class="controls">
+        <div>
+            <label for="modelSelect"><strong>Model Pricing: </strong></label>
+            <select id="modelSelect">
+                <option value="2.50">GPT-4o ($2.50 / 1M tokens)</option>
+                <option value="3.00">Claude 3.5 Sonnet ($3.00 / 1M tokens)</option>
+                <option value="1.25">Gemini 1.5 Pro ($1.25 / 1M tokens)</option>
+                <option value="0.15">GPT-4o Mini ($0.15 / 1M tokens)</option>
+            </select>
+        </div>
+         <select id="viewSelect">
+            <option value="all">All Outputs</option>
+            <option value="visual">Visualized Tokens</option>
+            <option value="ids">Raw Token IDs</option>
+            <option value="decoded">Decoded Token List</option>
+        </select>
+        <button id="clearBtn">Clear Text</button>
+    </div>
+
+    <div class="stats">
+        <div>Tokens: <span id="tCount">0</span></div>
+        <div>|</div>
+        <div>Characters: <span id="cCount">0</span></div>
+        <div>|</div>
+        <div>Est. Cost: $<span id="costCount">0.000000</span></div>
+    </div>
+
+    <!-- 1. Visualized Tokens (Shown by default) -->
+    <div id="visualSection">
+        <h4>Visualized Tokens (Hover to see ID):</h4>
+        <div id="output" class="box"></div>
+    </div>
+
+    <!-- 2. Raw Token IDs (Hidden until selected) -->
+    <div id="idsSection">
+        <h4>Raw Token IDs:</h4>
+        <div id="idOutput" class="box"></div>
+    </div>
+
+    <!-- 3. Decoded Token List (Hidden until selected) -->
+    <div id="decodedSection">
+        <h4>Decoded Token List:</h4>
+        <div id="arrayOutput" class="box mono"></div>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
