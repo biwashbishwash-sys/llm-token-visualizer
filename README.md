@@ -1,0 +1,2 @@
+# llm-token-visualizer
+Interactive web app built with FastAPI, Python (tiktoken), and JavaScript to visualize LLM tokenization, match repeated token IDs by color, and estimate real-time API costs across AI models.
